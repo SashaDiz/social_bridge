@@ -13,42 +13,39 @@
           </span>
         <% end %>
       </div>
-
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex" aria-label="Main navigation">
         <ul class="flex space-x-8">
           <li>
-            <%= link_to "Home", root_path, 
+            <%= link_to "Home", root_path,
                 class: "text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200 #{'text-blue-600 border-b-2 border-blue-600' if current_page?(root_path)}" %>
           </li>
           <li>
-            <%= link_to "About", about_path, 
+            <%= link_to "About", about_path,
                 class: "text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200 #{'text-blue-600 border-b-2 border-blue-600' if current_page?(about_path)}" %>
           </li>
           <li>
-            <%= link_to "Features", "#", 
+            <%= link_to "Features", "#",
                 class: "text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200" %>
           </li>
           <li>
-            <%= link_to "Contact", "#", 
+            <%= link_to "Contact", "#",
                 class: "text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200" %>
           </li>
         </ul>
       </nav>
-
       <!-- Desktop Auth Buttons -->
       <div class="hidden md:flex items-center space-x-4">
-        <%= link_to "Sign In", "#", 
+        <%= link_to "Sign In", "#",
             class: "text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors duration-200" %>
-        <%= link_to "Sign Up", "#", 
+        <%= link_to "Sign Up", "#",
             class: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm hover:shadow-md" %>
       </div>
-
       <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button type="button" 
+        <button type="button"
                 class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-200"
-                aria-controls="mobile-menu" 
+                aria-controls="mobile-menu"
                 aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <!-- Hamburger icon -->
@@ -58,41 +55,39 @@
         </button>
       </div>
     </div>
-
     <!-- Mobile Navigation Menu -->
     <div class="mobile-menu hidden md:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 sm:px-3 bg-white border-t border-gray-100">
         <nav aria-label="Mobile navigation">
           <ul class="space-y-1">
             <li>
-              <%= link_to "Home", root_path, 
+              <%= link_to "Home", root_path,
                   class: "block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200 #{'text-blue-600 bg-blue-50' if current_page?(root_path)}" %>
             </li>
             <li>
-              <%= link_to "About", about_path, 
+              <%= link_to "About", about_path,
                   class: "block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200 #{'text-blue-600 bg-blue-50' if current_page?(about_path)}" %>
             </li>
             <li>
-              <%= link_to "Features", "#", 
+              <%= link_to "Features", "#",
                   class: "block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200" %>
             </li>
             <li>
-              <%= link_to "Contact", "#", 
+              <%= link_to "Contact", "#",
                   class: "block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200" %>
             </li>
           </ul>
         </nav>
-        
         <!-- Mobile Auth Buttons -->
         <div class="pt-4 pb-3 border-t border-gray-200">
           <nav aria-label="Authentication">
             <ul class="flex items-center px-3 space-x-3">
               <li>
-                <%= link_to "Sign In", "#", 
+                <%= link_to "Sign In", "#",
                     class: "text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium transition-colors duration-200" %>
               </li>
               <li>
-                <%= link_to "Sign Up", "#", 
+                <%= link_to "Sign Up", "#",
                     class: "bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-base font-medium transition-colors duration-200" %>
               </li>
             </ul>
@@ -102,20 +97,19 @@
     </div>
   </div>
 </header>
-
 <script>
   // Mobile menu toggle functionality
   document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const mobileMenu = document.querySelector('.mobile-menu');
-    
+
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', function() {
         const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        
+
         mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
         mobileMenu.classList.toggle('hidden');
-        
+
         // Update hamburger icon
         const icon = mobileMenuButton.querySelector('svg');
         if (isExpanded) {
